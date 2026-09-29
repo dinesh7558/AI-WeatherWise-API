@@ -1,0 +1,23 @@
+$kind: http-request
+url: "{{base_url}}/api/locations"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+      "city": "Hyderabad",
+      "country": "India"
+    }
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+scripts:
+  - type: afterResponse
+    code: |-
+      var jsonData = pm.response.json();
+      if (jsonData.success && jsonData.data && jsonData.data._id) {
+          pm.collectionVariables.set("location_id", jsonData.data._id);
+      }
+    language: text/javascript
+order: 1000

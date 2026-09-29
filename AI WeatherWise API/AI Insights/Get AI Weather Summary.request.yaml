@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{base_url}}/api/ai/weather-summary"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+      "city": "Hyderabad",
+      "temperature": 34,
+      "humidity": 70,
+      "condition": "Cloudy"
+    }
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 1000

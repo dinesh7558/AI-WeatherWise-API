@@ -1,0 +1,15 @@
+$kind: http-request
+url: "{{base_url}}/api/locations/{{location_id}}"
+method: PUT
+body:
+  type: json
+  content: |-
+    {
+      "city": "Secunderabad",
+      "country": "India"
+    }
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 3000

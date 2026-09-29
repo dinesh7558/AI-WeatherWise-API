@@ -1,0 +1,15 @@
+$kind: http-request
+url: "{{base_url}}/api/ai/weather-recommendation"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+      "temperature": 34,
+      "condition": "Sunny"
+    }
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 2000

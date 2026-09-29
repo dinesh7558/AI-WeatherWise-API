@@ -1,0 +1,8 @@
+$kind: http-request
+url: "{{base_url}}/api/locations"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 2000
